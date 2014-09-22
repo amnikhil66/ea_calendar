@@ -1,20 +1,20 @@
 [
     {
-        "Time": "05:00:00 AM",
+        "Time": "05:00:00",
         "Currency": "JPY",
         "Event": "Coincident Index (JUN P)",
         "Importance": "Low",
         "Forecast": 109.6
     },
     {
-        "Time": "06:00:00 AM",
+        "Time": "06:00:00",
         "Currency": "EUR",
         "Event": "German Factory Orders n.s.a. (YoY) (JUN)",
         "Importance": "Medium",
         "Forecast": 109.6
     },
     {
-        "Time": "07:15:00 AM",
+        "Time": "07:15:00",
         "Currency": "USD",
         "Event": "Chicago Fed Nat Activity Index (JUL)",
         "Importance": "High",
@@ -35,7 +35,7 @@
         "Forecast": 109.6
     },
     {
-        "Time": "15:59:00",
+        "Time": "17:54:00",
         "Currency": "USD",
         "Event": "Trade Balance (JUN)",
         "Importance": "High",

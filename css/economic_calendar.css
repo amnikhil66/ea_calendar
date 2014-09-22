@@ -1,0 +1,12 @@
+#economic_calendar .hidden{
+	display: none;
+}
+
+#economic_calendar .additional-details-container{
+}
+
+#economic_calendar .countdown_timer{
+}
+
+#economic_calendar [id^="cc_chart_"]{
+}
