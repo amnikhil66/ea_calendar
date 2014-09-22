@@ -21,21 +21,21 @@
         "Forecast": 109.6
     },
     {
-        "Time": "08:30:00 AM",
+        "Time": "15:31:00",
         "Currency": "GBP",
         "Event": "Manufacturing Production (YoY) (JUN)",
         "Importance": "Medium",
         "Forecast": 109.6
     },
     {
-        "Time": "09:00:00 AM",
+        "Time": "13:25:00",
         "Currency": "EUR",
         "Event": "Italian Gross Domestic Product s.a. and w.d.a. (YoY) (2Q P)",
         "Importance": "Low",
         "Forecast": 109.6
     },
     {
-        "Time": "23:41:00",
+        "Time": "15:59:00",
         "Currency": "USD",
         "Event": "Trade Balance (JUN)",
         "Importance": "High",

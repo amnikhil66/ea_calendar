@@ -1,6 +1,6 @@
-'use strict';
-
 (function($){
+    "use strict";
+
     $.fn.eaCalendar = function(options){
         var __this = this,
             calendar_keys = null,
@@ -23,18 +23,47 @@
         var addDetailedView = function(date){
             var now = new Date(),
                 time_difference = ((date - now) / (1000 * 60)).toFixed(2),
-                mins = time_difference >= 10 ? time_difference : "0" + Math.floor(time_difference),
+                mins = time_difference >= 10 ? Math.floor(time_difference) : "0" + Math.floor(time_difference),
                 secs = Math.floor((time_difference % 1) * 60),
                 triggerInterval = null;
 
-                secs = secs >= 10 ? secs : "0" + secs;
+            secs = secs >= 10 ? secs : "0" + secs;
 
-            if(time_difference >= 0 && time_difference <= 15){
+            if(time_difference >= 0){
                 var $detailsRow = $calendarBody.append("<tr>").find("tr:last-child"),
-                    counter = (time_difference >= 15) ? "14:59" : mins + ":" + secs;
+                    chart_id = "cc_chart_" + (Math.floor(Math.random() * secs)),
+                    counter = mins + ":" + secs;
 
-                $detailsRow.append("<td class='countdown_timer'>"
-                    + counter + "</td>");
+                $detailsRow.addClass("additional-details-container").append("<td class='countdown_timer'>" +
+                    counter + "</td>");
+                $detailsRow.append("<td class='random-text'>Random Text</td>");
+                $detailsRow.append("<td class='chart-container'><div id='" + chart_id + "'></div></td>");
+
+                var appendChart = function(){
+                    var currencyPairsData = {
+                        x: "Pairs",
+                        url: "js/data/cc_2_EUR_1.json",
+                        mimeType: "json",
+                        type: "bar",
+                        color: function(color, d){
+                            return !!d.value ? (d.value > 0 ? "#1bc45b" : "#ec3232") : color;
+                        },
+                        refresh_interval: 2000,
+                        axis: {
+                            x: {
+                                type: "category",
+                                label: "Currency"
+                            },
+                            y: {
+                            label: "PiPs",
+                                min: -5,
+                                max: 5
+                            }
+                        }
+                    };
+
+                    generateChart("#" + chart_id, currencyPairsData);
+                };
 
                 var appendNewTime = function(){
                     var $timer = $detailsRow.find(".countdown_timer"),
@@ -42,33 +71,38 @@
                         mins = parseInt(time.match(/^\d*/)[0]),
                         secs = parseInt(time.match(/\d*$/)[0]) - 1;
 
-                    debugger;
+                    if(mins < 15){
+                        $detailsRow.removeClass("hidden");
+                    }
 
                     if(secs === 0){
-                        mins != 0 ? mins-- : mins;
+                        mins !== 0 ? mins-- : mins;
 
                         if(mins === 0){
                             clearInterval(triggerInterval);
+                            appendChart();
                         }else{
                             secs = 59;
-                        };
-                    };
+                        }
+                    }
 
                     if(mins < 10){
                         mins = "0" + mins;
-                    };
+                    }
 
                     if(secs < 10){
                         secs = "0" + secs;
-                    };
+                    }
 
-                    
-
-                    $timer.text(mins + ":" + secs)
+                    $timer.text(mins + ":" + secs);
                 };
 
+                if(time_difference > 15){
+                    $detailsRow.addClass("hidden");
+                }
+
                 triggerInterval = setInterval(appendNewTime, 1000);
-            };
+            }
         };
 
         var loadEvents = function(data){
@@ -87,7 +121,7 @@
                         $thisRow.append("<td>" + event[key] + "</td>");
                     }else{
                         $thisRow.append("<td></td>");
-                    };
+                    }
                 });
 
                 addDetailedView(date);
