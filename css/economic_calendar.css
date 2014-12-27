@@ -2,6 +2,27 @@
 	display: none;
 }
 
+#economic_calendar table{
+	font-family: inherit;
+	font-size: 0.9em;
+	width: 80%;
+	border-collapse: collapse;
+}
+
+#economic_calendar th, #economic_calendar td{
+	text-align: left;
+	word-wrap: normal;
+	padding: 10px;
+}
+
+#economic_calendar tbody > tr:nth-child(2n + 1){
+	background-color: #d8d8d8;
+}
+
+#economic_calendar tbody tr:nth-child(2n){
+	background-color: #fafafa;
+}
+
 #economic_calendar .additional-details-container{
 }
 

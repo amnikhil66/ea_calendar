@@ -36,8 +36,8 @@
 
                 $detailsRow.addClass("additional-details-container").append("<td class='countdown_timer'>" +
                     counter + "</td>");
-                $detailsRow.append("<td class='random-text'>Random Text</td>");
-                $detailsRow.append("<td class='chart-container'><div id='" + chart_id + "'></div></td>");
+                $detailsRow.append("<td class='random-text' colspan='3'>Random Text</td>");
+                $detailsRow.append("<td class='chart-container' colspan='4'><div id='" + chart_id + "'></div></td>");
 
                 var deleteRow = function(){
                     $detailsRow.remove();
