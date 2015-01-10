@@ -7,7 +7,8 @@
             events = null,
             $calendarBody = null,
             $calendarHeadRow = null,
-            $calendar = $("<table></table>");
+            $calendar = $("<table></table>"),
+            time_zone = new Date().getTimezoneOffset() / 60;
 
         var getDate = function(time_string){
             return new Date(time_string);
@@ -39,19 +40,18 @@
                 $detailsRow.append("<td class='chart-container' colspan='8'><div id='" + chart_id + "'></div></td>");
 
                 var deleteRow = function(){
-                    $detailsRow.remove();
+                    this.remove();
                 };
 
-                var appendChart = function(){
+                var appendChart = function(data){
                     var currencyPairsData = {
                         x: "Pairs",
-                        url: "js/data/cc_2_EUR_1.json",
-                        mimeType: "json",
+                        data: data,
                         type: "bar",
                         color: function(color, d){
                             return !!d.value ? (d.value > 0 ? "#1bc45b" : "#ec3232") : color;
                         },
-                        refresh_interval: 2000,
+                        // refresh_interval: 2000,
                         axis: {
                             x: {
                                 type: "category",
@@ -69,66 +69,77 @@
                 };
 
                 var sortData = function(data){
-                    detailsRow.data = {
-                        "Pairs": [],
-                        "PiPs": [
+                    this.data = [
+                        null,
+                        [
+                            "PiPs",
                             Math.min.apply(null, data["PiPs"]),
                             Math.max.apply(null, data["PiPs"])  
                         ]
-                    };
-                    data["Pairs"] = [
-                        data["Pairs"][data["PiPs"].indexOf(temp["PiPs"][0])],
-                        data["Pairs"][data["PiPs"].indexOf(temp["PiPs"][1])]
+                    ];
+                    this.data[0] = [
+                        "Pairs",
+                        data["Pairs"][data["PiPs"].indexOf(this.data[1][1])],
+                        data["Pairs"][data["PiPs"].indexOf(this.data[1][2])]
                     ];
 
-                    // Figure out a way to maintain the chart object
-                    $detailsRow.chart = appendChart(temp);
+                    this.chart = appendChart(this.data);
                 };
 
-                var getData = function($ele){
-                    var $prev = $ele.prev(),
+                var getData = function(){
+                    var $prev = this.prev(),
                         currency = $prev.find("td:nth-child(2)").text().trim().toUpperCase(),
-                        url = "/tools/widgets/cc_2_" + currency + "1440";
+                        url = options.graph_data_url + "/cc_2_" + currency + "_1.json";
 
-                        request(url, "json").done(sortData);
+                        request(url, "json").done(sortData.bind(this));
                 };
 
                 var updateCalendar = function(){
-                    request(options.events_url, "json").done(processUpdate);
+                    request(options.events_url, "json").done(processUpdate.bind(this));
                 };
 
                 var processUpdate = function(data){
-                    var $prev = $ele.prev(),
+                    var $prev = this.prev(),
                         event_name = $prev.find("td:nth-child(3)").text().trim().toUpperCase(),
                         $actual = $prev.find("td:nth-child(5)"),
+                        $focusPairs = $prev.find("td:nth-child(9)"),
                         event = $.grep(data, function(e){
-                            return !!e["Event"].trim().toUpperCase() === event_name;
-                        });
+                            return e["Event"].trim().toUpperCase() === event_name;
+                        })[0],
+                        new_data = {
+                            duration: 1000
+                        };
 
                         if(!!event && !jQuery.isEmptyObject(event)){
+                            $actual.text(event["Actual"]);
                             if(parseFloat(event["Actual"]) > parseFloat(event["Previous"])){
-                                $detailsRow.chart.load({
-                                    "Pairs": [$detailsRow.data["Pairs"][1]],
-                                    "PiPs": [$detailsRow.data["PiPs"][1]]
-                                });
+                                new_data.columns = [
+                                    ["Pairs", this.data[0][2]],
+                                    ["PiPs", this.data[1][2]]
+                                ];
+                                $focusPairs.text(this.data[0][2]);
                             }else{
-                                $detailsRow.chart.load({
-                                    "Pairs": [$detailsRow.data["Pairs"][0]],
-                                    "PiPs": [$detailsRow.data["PiPs"][0]]
-                                });
+                                new_data.columns = [
+                                    ["Pairs", this.data[0][1]],
+                                    ["PiPs", this.data[1][1]]
+                                ];
+                                $focusPairs.text(this.data[0][1]);
                             }
+
+                            this.chart.load(new_data);
                         }
                 };
 
                 var appendNewTime = function(){
-                    var $timer = $detailsRow.find(".countdown_timer"),
+                    var $timer = this.find(".countdown_timer"),
                         time = $timer.text(),
                         mins = parseInt(time.match(/^\d*/)[0]),
                         secs = parseInt(time.match(/\d*$/)[0]) - 1;
 
-                    if(mins < 15){
-                        $detailsRow.removeClass("hidden");
-                        getData($detailsRow);
+                    if(mins < 15 && !this.hasOwnProperty("appended")){
+                        this.removeClass("hidden");
+                        getData.call(this);
+                        this.appended = true;
                     }
 
                     if(secs === 0){
@@ -136,8 +147,8 @@
 
                         if(mins === 0){
                             clearInterval(triggerInterval);
-                            updateCalendar();
-                            setTimeout(deleteRow, 3600000);
+                            updateCalendar.call(this);
+                            setTimeout(deleteRow.bind(this), 3600000);
                         }else{
                             secs = 59;
                         }
@@ -158,7 +169,7 @@
                     $detailsRow.addClass("hidden");
                 }
 
-                triggerInterval = setInterval(appendNewTime, 1000);
+                triggerInterval = setInterval(appendNewTime.bind($detailsRow), 1000);
             }
         };
 
@@ -194,7 +205,7 @@
                 $calendarHeadRow.append("<th>" + key +"</th>");
             });
 
-            request(options.events_url, "json").done(loadEvents);
+            request(options.events_url + "?time_zone=" + time_zone, "json").done(loadEvents);
         };
 
         request(options.calendar_keys_url, "json").done(loadCalendarKeys);

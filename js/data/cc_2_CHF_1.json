@@ -1,12 +1,12 @@
 {
     "Pairs": [
-        "CHFAUD",
-        "CHFCAD",
-        "CHFEUR",
-        "CHFGBP",
-        "CHFJPY",
-        "CHFNZD",
-        "CHFUSD"
+        "EURAUD",
+        "EURCAD",
+        "EURCHF",
+        "EURGBP",
+        "EURJPY",
+        "EURNZD",
+        "EURUSD"
     ],
     "PiPs": [
         -0.3,
