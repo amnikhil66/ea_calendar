@@ -1,10 +1,1 @@
-[
-    "Time",
-    "Currency",
-    "Event",
-    "Importance",
-    "Actual",
-    "Forecast",
-    "Previous",
-    "Focus Pairs"
-]
+["Date", "Currency", "Event", "Impact", "Actual", "Forecast", "Consensus", "Previous", "Focus Pairs"]

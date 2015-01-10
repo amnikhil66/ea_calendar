@@ -1,44 +1,353 @@
-[
-    {
-        "Time": "05:00:00",
-        "Currency": "JPY",
-        "Event": "Coincident Index (JUN P)",
-        "Importance": "Low",
-        "Forecast": 109.6
-    },
-    {
-        "Time": "06:00:00",
-        "Currency": "EUR",
-        "Event": "German Factory Orders n.s.a. (YoY) (JUN)",
-        "Importance": "Medium",
-        "Forecast": 109.6
-    },
-    {
-        "Time": "07:15:00",
-        "Currency": "USD",
-        "Event": "Chicago Fed Nat Activity Index (JUL)",
-        "Importance": "High",
-        "Forecast": 109.6
-    },
-    {
-        "Time": "15:31:00",
-        "Currency": "GBP",
-        "Event": "Manufacturing Production (YoY) (JUN)",
-        "Importance": "Medium",
-        "Forecast": 109.6
-    },
-    {
-        "Time": "13:25:00",
-        "Currency": "EUR",
-        "Event": "Italian Gross Domestic Product s.a. and w.d.a. (YoY) (2Q P)",
-        "Importance": "Low",
-        "Forecast": 109.6
-    },
-    {
-        "Time": "22:10:00",
-        "Currency": "USD",
-        "Event": "Trade Balance (JUN)",
-        "Importance": "High",
-        "Forecast": 109.6
-    }
-]
+[{
+    "Impact": "Medium",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 31, 23:51",
+    "Event": "(Germany) Retail Sales (MoM)",
+    "Previous": "1.9%"
+}, {
+    "Impact": "Medium",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 29, 07:00",
+    "Event": "(Germany) Retail Sales (YoY)",
+    "Previous": "1.7%"
+}, {
+    "Impact": "Medium",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "CHF",
+    "Date": "2014, December 29, 07:00",
+    "Event": "(Switzerland) UBS Consumption Indicator",
+    "Previous": "1.29"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 29, 07:00",
+    "Event": "(Finland) Consumer Confidence",
+    "Previous": "2.60"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 29, 07:00",
+    "Event": "(Finland) Industrial Confidence",
+    "Previous": "-11.00"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 29, 09:00",
+    "Event": "(Italy) Consumer Confidence",
+    "Previous": "100.20"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "BRL",
+    "Date": "2014, December 29, 10:00",
+    "Event": "(Brazil) Inflation Index/IGP-M",
+    "Previous": "0.98%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 29, 10:10",
+    "Event": "(Italy) 10-y Bond Auction",
+    "Previous": "2.08%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "BRL",
+    "Date": "2014, December 29, 12:30",
+    "Event": "(Brazil) Primary Budget Surplus",
+    "Previous": "3.73B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "BRL",
+    "Date": "2014, December 29, 12:30",
+    "Event": "(Brazil) Nominal Budget Balance",
+    "Previous": "-17.78B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "USD",
+    "Date": "2014, December 29, 15:30",
+    "Event": "(United States) Dallas Fed Manufacturing Business Index",
+    "Previous": "10.50"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "USD",
+    "Date": "2014, December 29, 16:30",
+    "Event": "(United States) 3-Month Bill Auction",
+    "Previous": "0.055%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "USD",
+    "Date": "2014, December 29, 16:30",
+    "Event": "(United States) 6-Month Bill Auction",
+    "Previous": "0.155%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "KRW",
+    "Date": "2014, December 29, 23:00",
+    "Event": "(South Korea) Current Account Balance",
+    "Previous": "7.32B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "KRW",
+    "Date": "2014, December 29, 23:00",
+    "Event": "(South Korea) Industrial Output (YoY)",
+    "Previous": "-3.2%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "KRW",
+    "Date": "2014, December 29, 23:00",
+    "Event": "(South Korea) Service Sector Output",
+    "Previous": "0.8%"
+}, {
+    "Impact": "None",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "ROL",
+    "Date": "2014, December 30, 00:00",
+    "Event": "(Romania) St. Andrew's Day",
+    "Previous": ""
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "GBP",
+    "Date": "2014, December 30, 07:00",
+    "Event": "(United Kingdom) Nationwide Housing Prices n.s.a (YoY)",
+    "Previous": "8.5%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "GBP",
+    "Date": "2014, December 30, 07:00",
+    "Event": "(United Kingdom) Nationwide Housing Prices s.a (MoM)",
+    "Previous": "0.3%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 08:00",
+    "Event": "(Spain) HICP (YoY)",
+    "Previous": "-0.5%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "TRY",
+    "Date": "2014, December 30, 08:00",
+    "Event": "(Turkey) Consumer Confidence",
+    "Previous": "68.70"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 08:00",
+    "Event": "(Austria) Producer Price Index (MoM)",
+    "Previous": "-0.10"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 08:00",
+    "Event": "(Austria) Producer Price Index (YoY)",
+    "Previous": "-1.00"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 08:00",
+    "Event": "(Spain) Current Account Balance",
+    "Previous": "\u00800.44B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 08:00",
+    "Event": "(Spain) Retail Sales (YoY)",
+    "Previous": "1.0%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "SEK",
+    "Date": "2014, December 30, 08:30",
+    "Event": "(Sweden) Trade Balance (MoM)",
+    "Previous": "-0.20B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "HKD",
+    "Date": "2014, December 30, 08:30",
+    "Event": "(Hong Kong SAR) Retail Sales",
+    "Previous": "1.4%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 09:00",
+    "Event": "(European Monetary Union) M3 Money Supply (3m)",
+    "Previous": "2.3%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 09:00",
+    "Event": "(European Monetary Union) M3 Money Supply (YoY)",
+    "Previous": "2.5%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 09:00",
+    "Event": "(European Monetary Union) Private loans (YoY)",
+    "Previous": "-1.1%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 09:00",
+    "Event": "(Austria) Purchasing Manager Index",
+    "Previous": "47.40"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 09:00",
+    "Event": "(Italy) Business Confidence",
+    "Previous": "96.30"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 11:00",
+    "Event": "(Italy) Producer Price Index (MoM)",
+    "Previous": "-0.4%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "EUR",
+    "Date": "2014, December 30, 11:00",
+    "Event": "(Italy) Producer Price Index (YoY)",
+    "Previous": "-1.2%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "ZAR",
+    "Date": "2014, December 30, 12:00",
+    "Event": "(South Africa) Trade Balance (in Rands)",
+    "Previous": "-21.33B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "CLP",
+    "Date": "2014, December 30, 12:00",
+    "Event": "(Chile) Industrial Production (YoY)",
+    "Previous": "1.0%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "CLP",
+    "Date": "2014, December 30, 12:00",
+    "Event": "(Chile) Unemployment rate",
+    "Previous": "6.4%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "USD",
+    "Date": "2014, December 30, 14:00",
+    "Event": "(United States) S&P/Case-Shiller Home Price Indices (YoY)",
+    "Previous": "4.9%"
+}, {
+    "Impact": "High",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "USD",
+    "Date": "2014, December 30, 15:00",
+    "Event": "(United States) Consumer Confidence",
+    "Previous": "88.70"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "USD",
+    "Date": "2014, December 30, 16:30",
+    "Event": "(United States) 4-Week Bill Auction",
+    "Previous": "0.01%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "COP",
+    "Date": "2014, December 30, 17:00",
+    "Event": "(Colombia) National Jobless Rate",
+    "Previous": "7.9%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "MXN",
+    "Date": "2014, December 30, 20:30",
+    "Event": "(Mexico) Fiscal Balance, pesos",
+    "Previous": "-25.04B"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "KRW",
+    "Date": "2014, December 30, 23:00",
+    "Event": "(South Korea) Consumer Price Index Growth",
+    "Previous": "-0.2%"
+}, {
+    "Impact": "Low",
+    "Actual": "",
+    "Consensus": "",
+    "Currency": "KRW",
+    "Date": "2014, December 30, 23:00",
+    "Event": "(South Korea) Consumer Price Index Growth (YoY)",
+    "Previous": "1.0%"
+}]
