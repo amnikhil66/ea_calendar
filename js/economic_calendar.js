@@ -8,7 +8,7 @@
             $calendarBody = null,
             $calendarHeadRow = null,
             $calendar = $("<table></table>"),
-            time_zone = new Date().getTimezoneOffset() / 60;
+            time_zone = -(new Date().getTimezoneOffset() / 60);
 
         var getDate = function(time_string){
             return new Date(time_string);
@@ -89,7 +89,7 @@
                 var getData = function(){
                     var $prev = this.prev(),
                         currency = $prev.find("td:nth-child(2)").text().trim().toUpperCase(),
-                        url = options.graph_data_url + "/cc_2_" + currency + "_1.json";
+                        url = options.graph_data_url + "/cc_2_" + currency + "_1";
 
                         request(url, "json").done(sortData.bind(this));
                 };
